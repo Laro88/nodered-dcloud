@@ -1,0 +1,62 @@
+﻿<!--
+  Copyright 2016 Danfoss A/S.
+
+  MIT License
+-->
+
+<script type="text/x-red" data-template-name="DCloudWrite">
+    <div class="form-row">
+        <label for="node-input-partid"><i class="fa fa-server"></i> Source</label>
+        <input type="text" id="node-input-source" placeholder="source">
+    </div>
+    <div class="form-row">
+        <label for="node-input-variabletag"><i class="fa fa-key"></i> Variable Tag (tag pnu/name)</label>
+        <input type="text" id="node-input-variabletag" placeholder="variabletag">
+    </div>
+    <div class="form-row">
+        <label for="node-input-variableid"><i class="fa fa-key"></i> Variable ID (actual variable pnu/name)</label>
+        <input type="text" id="node-input-variableid" placeholder="variableid">
+    </div>
+</script>
+
+
+<!-- Next, some simple help text is provided for the node.                   -->
+<script type="text/x-red" data-help-name="DCloudWrite">
+    <!-- data-help-name identifies the node type this help is for             -->
+    <!-- This content appears in the Info sidebar when a node is selected     -->
+    <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
+    <!-- node in the palette.                                                 -->
+    <p>
+        DCloud read value(s) from the given source
+        The write object will contain JSON with a 'Tag':'ID' meaning you can achieve 'pnu':4066 or 'name':'tgt1.Xn' 
+    </p>
+    <p>
+        ring: red=broken, yellow=unknown, green=good
+        What is the status of the write operation
+    </p>
+</script>
+
+<!-- Finally, the node type is registered along with all of its properties   -->
+<!-- The example below shows a small subset of the properties that can be set-->
+<script type="text/javascript">
+    RED.nodes.registerType('DCloudWrite', {
+        category: 'dcloud',      // the palette category
+        defaults: {             // defines the editable properties of the node
+            source: { value: "", type: "DCloudSource" },
+            variabletag: { value: "", required: true },
+            variableid: { value: "", required: true },
+            name: { value: "DCloud Write" }
+        },
+        align: "right",
+        inputs: 1,               // set the number of inputs - only 0 or 1
+        outputs: 0,              // set the number of outputs - 0 to n
+        // set the icon (held in icons dir below where you save the node)
+        icon: "DCloudDataLatest.png",     // saved in  icons/myicon.png
+        color: "#FF0000",
+        label: function () {     // sets the default label contents
+            //console.debug('source:' + this.source);
+            var _sourceObj = RED.nodes.node(this.source);
+            return 'W ' + this.variabletag+'#'+this.variableid+'@'+_sourceObj.name;
+        }
+    });
+</script>

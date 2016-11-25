@@ -1,0 +1,64 @@
+﻿<!--
+  Copyright 2016 Danfoss A/S.
+  MIT License
+-->
+
+<script type="text/x-red" data-template-name="DCloudSource">
+    <div class="form-row">
+        <label for="node-config-input-serverUrl"><i class="fa fa-server"></i> serverUrl</label>
+        <input type="text" id="node-config-input-serverUrl" placeholder="serverUrl">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-userToken"><i class="fa fa-key"></i> userToken</label>
+        <input type="text" id="node-config-input-userToken" placeholder="userToken">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-deviceuuid"><i class="fa fa-key"></i> deviceuuid</label>
+        <input type="text" id="node-config-input-deviceuuid" placeholder="deviceuuid">
+    </div>
+
+    <br />
+    <!-- By convention, most nodes have a 'name' property. The following div -->
+    <!-- provides the necessary field. Should always be the last option      -->
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+</script>
+
+
+<!-- Next, some simple help text is provided for the node.                   -->
+<script type="text/x-red" data-help-name="DCloudSource">
+    <!-- data-help-name identifies the node type this help is for             -->
+    <!-- This content appears in the Info sidebar when a node is selected     -->
+    <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
+    <!-- node in the palette.                                                 -->
+    <p>
+        Configure a device by specifying server, userToken and device uuid (where, who, what) that can be referenced by name.
+    </p>
+</script>
+
+<!-- Finally, the node type is registered along with all of its properties   -->
+<!-- The example below shows a small subset of the properties that can be set-->
+<script type="text/javascript">
+    RED.nodes.registerType('DCloudSource', {
+        category: 'config',      // the palette category
+        defaults: {             // defines the editable properties of the node
+            serverUrl: { value: "https://publicapi.dcloud.dk/api/v1", required: true },
+            userToken: { value: "usertoken to access the device with - the credentials to use communicating with the device", required: true },
+            deviceuuid: { value: "uuid of the speficic device", required: true },
+            name: { value: "Some name to remember the device by like: ECL building A", required: true }
+        },
+        inputs: 1,               // set the number of inputs - only 0 or 1
+        outputs: 1,              // set the number of outputs - 0 to n
+        // set the icon (held in icons dir below where you save the node)
+        icon: "DCloudConfig.png",     // saved in  icons/myicon.png
+        color: "#FF0000",
+        label: function () {     // sets the default label contents
+            return this.name || 'name missing';
+        },
+        labelStyle: function () { // sets the class to apply to the label
+            return this.name ? "node_label_italic" : "";
+        }
+    });
+</script>

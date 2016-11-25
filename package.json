@@ -1,0 +1,25 @@
+{
+  "name": "node-red-contrib-dcloud",
+  "version": "0.0.7",
+  "description": "DCloud publicapi components",
+  "author": {
+    "name": "Jes Ramsing",
+    "email": "jesramsing@danfoss.com"
+  },
+
+  "license": "MIT",
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "DCloudRead": "DCloudRead.js",
+      "DCloudWrite": "DCloudWrite.js",
+      "DCloudSource": "DCloudSource.js"
+    }
+  },
+  "dependencies": {
+    "async": "^2.1.4",
+    "request": "^2.79.0"
+  }
+}

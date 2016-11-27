@@ -1,25 +1,32 @@
 {
   "name": "node-red-contrib-dcloud",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "DCloud publicapi components",
   "author": {
     "name": "Jes Ramsing",
     "email": "jesramsing@danfoss.com"
   },
-
   "license": "MIT",
   "keywords": [
     "node-red"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Laro88/nodered-dcloud.git"
+  },
   "node-red": {
     "nodes": {
       "DCloudRead": "DCloudRead.js",
       "DCloudWrite": "DCloudWrite.js",
-      "DCloudSource": "DCloudSource.js"
+      "DCloudSource": "DCloudSource.js",
+      "DCloudGraphSlicer": "DCloudGraphSlicer.js"
     }
   },
   "dependencies": {
     "async": "^2.1.4",
     "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
   }
 }

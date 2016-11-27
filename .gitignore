@@ -1,2 +1,4 @@
 ﻿obj/
 .vs/
+node_modules/
+bin/

@@ -13,7 +13,6 @@
         var request = require('request');
 
         this.source = RED.nodes.getNode(node.config.source);
-        testSource(this.source);
 
         //Handle input
         this.on('input', function (msg) {
@@ -38,25 +37,7 @@
                     //console.log('sending msg:' + util.inspect(msg));
                     node.send(msg);
                 }
-            })
-        }
-
-        function testSource(source) {
-            if (source) {
-                node.status({ fill: "yellow", shape: "ring", text: "testing source" });
-                dc.status(node.source, function (err, res) {
-                    if (err) {
-                        console.log(err);
-                        node.status({ fill: "red", shape: "ring", text: "err" });
-                    }
-                    else {
-                        node.status({ fill: "green", shape: "ring", text: "ok" });
-                    }
-                });
-            }
-            else {
-                node.status({ fill: "red", shape: "ring", text: "source missing" });
-            }
+            });
         }
     }
     

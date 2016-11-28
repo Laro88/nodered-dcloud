@@ -34,6 +34,7 @@
     <Content Include=".gitignore" />
     <Content Include="99-sample.html" />
     <Content Include="GraphSlicer.html" />
+    <Content Include="Status.html" />
     <Content Include="Write.html" />
     <Content Include="Read.html" />
     <Content Include="Source.html" />
@@ -50,6 +51,7 @@
     <Compile Include="99-sample.js" />
     <Compile Include="Calls.js" />
     <Compile Include="GraphSlicer.js" />
+    <Compile Include="Status.js" />
     <Compile Include="Write.js" />
     <Compile Include="Read.js" />
     <Compile Include="Source.js" />

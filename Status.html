@@ -1,0 +1,48 @@
+﻿<!--
+  Copyright 2016 Danfoss A/S.
+
+  MIT License
+-->
+
+<script type="text/x-red" data-template-name="Status">
+    <div class="form-row">
+        <label for="node-input-source"><i class="fa fa-server"></i> Source</label>
+        <input type="text" id="node-input-source" placeholder="source">
+    </div>
+</script>
+
+
+<!-- Next, some simple help text is provided for the node.                   -->
+<script type="text/x-red" data-help-name="Status">
+    <!-- data-help-name identifies the node type this help is for             -->
+    <!-- This content appears in the Info sidebar when a node is selected     -->
+    <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
+    <!-- node in the palette.                                                 -->
+    <p>
+        Get status of the publicapi server described in the source
+    </p>
+    <p>
+        The topic indicates success or failure (Topic:"statusOk") or (Topic:"statusErr")
+    </p>
+</script>
+
+<!-- Finally, the node type is registered along with all of its properties   -->
+<!-- The example below shows a small subset of the properties that can be set-->
+<script type="text/javascript">
+    RED.nodes.registerType('Status', {
+        category: 'dcloud',      // the palette category
+        defaults: {             // defines the editable properties of the node
+            source: { value: "", type: "Source" },
+            name: { value: "DCloud Status" }
+        },
+        outputs: 1,              // set the number of outputs - 0 to n
+        // set the icon (held in icons dir below where you save the node)
+        icon: "alert.png",     // saved in  icons/myicon.png
+        color: "#FF0000",
+        label: function () {     // sets the default label contents
+            var _sourceObj = RED.nodes.node(this.source);
+            //console.debug(_sourceObj);
+            return 'Status ' + _sourceObj.name;
+        }
+    });
+</script>

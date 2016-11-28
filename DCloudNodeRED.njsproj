@@ -33,10 +33,10 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="99-sample.html" />
-    <Content Include="DCloudGraphSlicer.html" />
-    <Content Include="DCloudWrite.html" />
-    <Content Include="DCloudRead.html" />
-    <Content Include="DCloudSource.html" />
+    <Content Include="GraphSlicer.html" />
+    <Content Include="Write.html" />
+    <Content Include="Read.html" />
+    <Content Include="Source.html" />
     <Content Include="icons\DCloudConfig.pdn" />
     <Content Include="icons\DCloudConfig.png" />
     <Content Include="package.json" />
@@ -48,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="99-sample.js" />
-    <Compile Include="DCloudCalls.js" />
-    <Compile Include="DCloudGraphSlicer.js" />
-    <Compile Include="DCloudWrite.js" />
-    <Compile Include="DCloudRead.js" />
-    <Compile Include="DCloudSource.js" />
+    <Compile Include="Calls.js" />
+    <Compile Include="GraphSlicer.js" />
+    <Compile Include="Write.js" />
+    <Compile Include="Read.js" />
+    <Compile Include="Source.js" />
     <Compile Include="test\utGraphSlicer.js">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>

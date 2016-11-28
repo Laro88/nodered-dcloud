@@ -2,7 +2,7 @@
 
     var util = require('util');
 
-    function DCloudGraphSlicer(cfg) {
+    function GraphSlicer(cfg) {
         "use strict";
         RED.nodes.createNode(this, cfg);
         var node = this;
@@ -64,5 +64,5 @@
         
     }
     
-    RED.nodes.registerType("DCloudGraphSlicer", DCloudGraphSlicer);
+    RED.nodes.registerType("GraphSlicer", GraphSlicer);
 }

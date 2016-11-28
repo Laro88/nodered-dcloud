@@ -9,13 +9,17 @@ The use of these components requires that you are registered on DCLoud, has api 
 
 [DCloud](www.dcloud.dk)
 
-## config
+## config (used inside Read and Write nodes)
 The config component handles the server URL, manages credentials, components available and monitors the status of the DCloud.
 
-## readLatest
+## Read
 Reads the latest values of one or more varids
 
+## Write
+Lets you write variables inside devices (prototype, use only if you know what you are doing or you might mess up the target device)
 
+## GraphSlicer
+Formats Read data to fit the Chart node in Dashboard
 
 ### If You Are Submitting Bugs/Issues
 Because we(I) can't magically know what you are doing to expose an issue, it is best if you provide a snippet of code. This snippet need not include your secret sauce, but it must replicate the issue you are describing. The issues that get closed without resolution tend to be the ones without code examples. Thanks.

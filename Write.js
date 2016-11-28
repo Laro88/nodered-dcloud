@@ -1,7 +1,7 @@
 ﻿module.exports = function (RED) {
-    var dc = require('./DCloudCalls.js');
+    var dc = require('./Calls.js');
 
-    function DCloudWrite(cfg) {
+    function Write(cfg) {
         "use strict";
         RED.nodes.createNode(this, cfg);
         var node = this;
@@ -35,5 +35,5 @@
         });
     }
 
-    RED.nodes.registerType("DCloudWrite", DCloudWrite);
+    RED.nodes.registerType("Write", Write);
 }

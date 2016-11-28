@@ -1,9 +1,9 @@
 ﻿var assert = require('assert');
 
-describe('DCloudGraphSlicer', function() {
+describe('GraphSlicer', function() {
     it('Simple', function() {
         assert.ok(true, "This shouldn't fail");
-        var gs = require('../DCloudGraphSlicer.js');
+        var gs = require('../GraphSlicer.js');
     })
 
     

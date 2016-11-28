@@ -4,14 +4,10 @@
   MIT License
 -->
 
-<script type="text/x-red" data-template-name="DCloudRead">
+<script type="text/x-red" data-template-name="GraphSlicer">
     <div class="form-row">
-        <label for="node-input-partid"><i class="fa fa-server"></i> Source</label>
-        <input type="text" id="node-input-source" placeholder="source">
-    </div>
-    <div class="form-row">
-        <label for="node-input-variable"><i class="fa fa-key"></i> Variable(s)</label>
-        <input type="text" id="node-input-variable" placeholder="variable">
+        <label for="node-input-variables"><i class="fa fa-key"></i> Variables</label>
+        <input type="text" id="node-input-variables" placeholder="variables">
     </div>
     <div class="form-row">
         <label for="node-input-from"><i class="fa fa-clock-o"></i> From</label>
@@ -21,18 +17,19 @@
 
 
 <!-- Next, some simple help text is provided for the node.                   -->
-<script type="text/x-red" data-help-name="DCloudRead">
+<script type="text/x-red" data-help-name="GraphSlicer">
     <!-- data-help-name identifies the node type this help is for             -->
     <!-- This content appears in the Info sidebar when a node is selected     -->
     <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
     <!-- node in the palette.                                                 -->
     <p>
-        DCloud read value(s) from the given source
+        Configures DCloud read operations into a chart ready data structure
     </p>
     <p>
-        Select a specific node in the Variables (multiple comma separated variables will be supported at some point in time)
+        Enter the variable names that you would like to include in the output
     </p>
     <p>
+        ignored at the moment (will enable shortening the view of the timeseries)
         leave from empty to get the latest value including the timestamp (notice checked and changed might be diferent, checked is when it was last validated, changed is when it was last observed as changed)
         if entering something then format the inquery as {integer}{h|d|m} where h is hours, d days m months. Observe the rounding back (to enable database caching) hours rounded back to nearest hour, days and months as well.
     </p>
@@ -41,18 +38,17 @@
 <!-- Finally, the node type is registered along with all of its properties   -->
 <!-- The example below shows a small subset of the properties that can be set-->
 <script type="text/javascript">
-    RED.nodes.registerType('DCloudRead', {
+    RED.nodes.registerType('GraphSlicer', {
         category: 'dcloud',      // the palette category
         defaults: {             // defines the editable properties of the node
-            source: { value: "", type: "DCloudSource" },
-            variable: { value: "", required: true },
+            variables: { value: "", required: true },
             from: { value: "", required: false},
-            name: { value: "DCloud Read" }
+            name: { value: "DCloud GS" }
         },
         inputs: 1,               // set the number of inputs - only 0 or 1
         outputs: 1,              // set the number of outputs - 0 to n
         // set the icon (held in icons dir below where you save the node)
-        icon: "DCloudDataLatest.png",     // saved in  icons/myicon.png
+        icon: "function.png",     // saved in  icons/myicon.png
         color: "#FF0000",
         label: function () {     // sets the default label contents
             var _sourceObj = RED.nodes.node(this.source);

@@ -3,7 +3,7 @@
   MIT License
 -->
 
-<script type="text/x-red" data-template-name="DCloudSource">
+<script type="text/x-red" data-template-name="Source">
     <div class="form-row">
         <label for="node-config-input-serverUrl"><i class="fa fa-server"></i> serverUrl</label>
         <input type="text" id="node-config-input-serverUrl" placeholder="serverUrl">
@@ -28,7 +28,7 @@
 
 
 <!-- Next, some simple help text is provided for the node.                   -->
-<script type="text/x-red" data-help-name="DCloudSource">
+<script type="text/x-red" data-help-name="Source">
     <!-- data-help-name identifies the node type this help is for             -->
     <!-- This content appears in the Info sidebar when a node is selected     -->
     <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
@@ -41,7 +41,7 @@
 <!-- Finally, the node type is registered along with all of its properties   -->
 <!-- The example below shows a small subset of the properties that can be set-->
 <script type="text/javascript">
-    RED.nodes.registerType('DCloudSource', {
+    RED.nodes.registerType('Source', {
         category: 'config',      // the palette category
         defaults: {             // defines the editable properties of the node
             serverUrl: { value: "https://publicapi.dcloud.dk/api/v1", required: true },

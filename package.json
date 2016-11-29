@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-dcloud",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "DCloud publicapi components",
   "author": {
     "name": "Jes Ramsing",
@@ -16,11 +16,11 @@
   },
   "node-red": {
     "nodes": {
-      "Status": "Status.js",
-      "Read": "Read.js",
-      "Write": "Write.js",
-      "Source": "Source.js",
-      "GraphSlicer": "GraphSlicer.js"
+      "DCloud-Status": "Status.js",
+      "DCloud-Read": "Read.js",
+      "DCloud-Write": "Write.js",
+      "DCloud-Source": "Source.js",
+      "DCloud-GraphSlicer": "GraphSlicer.js"
     }
   },
   "dependencies": {

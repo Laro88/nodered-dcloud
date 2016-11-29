@@ -4,7 +4,7 @@
   MIT License
 -->
 
-<script type="text/x-red" data-template-name="Read">
+<script type="text/x-red" data-template-name="Dcloud-Read">
     <div class="form-row">
         <label for="node-input-partid"><i class="fa fa-server"></i> Source</label>
         <input type="text" id="node-input-source" placeholder="source">
@@ -41,10 +41,10 @@
 <!-- Finally, the node type is registered along with all of its properties   -->
 <!-- The example below shows a small subset of the properties that can be set-->
 <script type="text/javascript">
-    RED.nodes.registerType('Read', {
+    RED.nodes.registerType('DCloud-Read', {
         category: 'dcloud',      // the palette category
         defaults: {             // defines the editable properties of the node
-            source: { value: "", type: "Source" },
+            source: { value: "", type: "DCloud-Source" },
             variable: { value: "", required: true },
             from: { value: "", required: false},
             name: { value: "DCloud Read" }

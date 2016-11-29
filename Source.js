@@ -1,5 +1,5 @@
 ﻿module.exports = function (RED) {
-    function Source(cfg) {
+    function DCloudSource(cfg) {
         "use strict";
         RED.nodes.createNode(this, cfg);
         this.serverUrl = cfg.serverUrl;
@@ -8,5 +8,5 @@
         this.name = cfg.name;
     }
 
-    RED.nodes.registerType("Source", Source);
+    RED.nodes.registerType("DCloud-Source", DCloudSource);
 }

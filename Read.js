@@ -1,7 +1,7 @@
 ﻿module.exports = function (RED) {
     var dc = require('./Calls.js');
 
-    function Read(cfg) {
+    function DCloudRead(cfg) {
         "use strict";
         RED.nodes.createNode(this, cfg);
         var node = this;
@@ -41,5 +41,5 @@
         }
     }
     
-    RED.nodes.registerType("Read", Read);
+    RED.nodes.registerType("DCloud-Read", DCloudRead);
 }

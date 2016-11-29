@@ -1,7 +1,7 @@
 ﻿module.exports = function (RED) {
     var dc = require('./Calls.js');
 
-    function Status(cfg) {
+    function DCloudStatus(cfg) {
         "use strict";
         RED.nodes.createNode(this, cfg);
         var node = this;
@@ -67,5 +67,5 @@
 
     }
     
-    RED.nodes.registerType("Status", Status);
+    RED.nodes.registerType("DCloud-Status", DCloudStatus);
 }

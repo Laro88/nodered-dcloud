@@ -4,7 +4,7 @@
   MIT License
 -->
 
-<script type="text/x-red" data-template-name="Status">
+<script type="text/x-red" data-template-name="DCloud-Status">
     <div class="form-row">
         <label for="node-input-source"><i class="fa fa-server"></i> Source</label>
         <input type="text" id="node-input-source" placeholder="source">
@@ -13,7 +13,7 @@
 
 
 <!-- Next, some simple help text is provided for the node.                   -->
-<script type="text/x-red" data-help-name="Status">
+<script type="text/x-red" data-help-name="DCloud-Status">
     <!-- data-help-name identifies the node type this help is for             -->
     <!-- This content appears in the Info sidebar when a node is selected     -->
     <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
@@ -29,10 +29,10 @@
 <!-- Finally, the node type is registered along with all of its properties   -->
 <!-- The example below shows a small subset of the properties that can be set-->
 <script type="text/javascript">
-    RED.nodes.registerType('Status', {
+    RED.nodes.registerType('DCloud-Status', {
         category: 'dcloud',      // the palette category
         defaults: {             // defines the editable properties of the node
-            source: { value: "", type: "Source" },
+            source: { value: "", type: "DCloud-Source" },
             name: { value: "DCloud Status" }
         },
         outputs: 1,              // set the number of outputs - 0 to n

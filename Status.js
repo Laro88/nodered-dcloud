@@ -17,6 +17,11 @@
 
         var timerRef = 0;
         
+        //Trigger a test when something comes in
+        this.on('input', function (msg) {
+            clearTimeout(timerRef);
+            testSource();
+        });
 
         this.on('close', function () {
             clearTimeout(timerRef);

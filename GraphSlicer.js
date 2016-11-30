@@ -8,6 +8,8 @@
         var node = this;
         node.config = cfg;
 
+        var g = {};
+
         //Handle input
         this.on('input', function (msg) {
             //this.log('input:' + util.inspect(msg)+ ' typeof:'  + typeof(msg));
@@ -15,7 +17,7 @@
             try {
                 var data = msg.payload.data;
                 //this.log('data identified:' + util.inspect(data));
-                var g = {};
+                
 
                 var lnk_varid_name = {}; //create inverse lookup having varids (when looping through data)
                 for (var ptr = 0; ptr < data.variablesRequested.length; ptr++) {

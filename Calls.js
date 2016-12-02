@@ -68,7 +68,14 @@ function performCall(options, callback) {
         }
         else {
             console.log('error:' + error + ' body:' + body);
-            callback(error, response);
+
+            var msg = {};
+            msg.error = 'error';
+            msg.errorDetails = error;
+            if (response && response.statusCode)
+                msg.statusCode = response.statusCode;
+                
+            callback(msg, response);
         }
     });
 }

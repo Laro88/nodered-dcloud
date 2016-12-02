@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-dcloud",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "DCloud publicapi components",
   "author": {
     "name": "Jes Ramsing",

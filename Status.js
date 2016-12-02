@@ -35,12 +35,15 @@
                 if (node.source) {
                     node.status({ fill: "yellow", shape: "ring", text: "testing source" });
                     dc.status(node.source, function (err, res) {
-                        msg.payload = res;
+                        
                         if (err) {
                             console.log(err);
                             node.status({ fill: "red", shape: "ring", text: "err" });
+                            msg.topic = 'statusErr';
+                            msg.payload = err;
                         }
                         else {
+                            msg.payload = res;
                             node.status({ fill: "green", shape: "ring", text: "ok" });
                             msg.topic = "statusOk";
                         }

@@ -45,9 +45,12 @@
         category: 'config',      // the palette category
         defaults: {             // defines the editable properties of the node
             serverUrl: { value: "https://publicapi.dcloud.dk/api/v1", required: true },
-            userToken: { value: "usertoken to access the device with - the credentials to use communicating with the device", required: true },
+            //userToken: { value: "usertoken to access the device with - the credentials to use communicating with the device", required: true },
             deviceuuid: { value: "uuid of the speficic device", required: true },
             name: { value: "Some name to remember the device by like: ECL building A", required: true }
+        },
+        credentials: {
+            userToken: { type: "text" }
         },
         inputs: 1,               // set the number of inputs - only 0 or 1
         outputs: 1,              // set the number of outputs - 0 to n
